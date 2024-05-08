@@ -62,7 +62,7 @@ class DBhandler :
             print(traceback.format_exc())
             return False
         
-        
+ # 작업.. 뽕짝뽕짝       
         
 
 
