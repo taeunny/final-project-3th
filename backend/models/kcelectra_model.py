@@ -2,13 +2,12 @@
 
 from transformers import ElectraTokenizer, ElectraForSequenceClassification, pipeline
 import torch
-from mentos_db_2 import DBhandler
 
 
 class Kcelectra:
     def __init__(self):
         self.device = 0 if torch.cuda.is_available() else -1
-        self.model = "nlp04/korean_sentiment_analysis_kcelectra"
+        self.model_name = "nlp04/korean_sentiment_analysis_kcelectra"
         self.sentiment_analyzer = pipeline(
             "sentiment-analysis",
             model=self.model_name,
@@ -16,7 +15,6 @@ class Kcelectra:
             device=self.device,
         )
 
-        self.db_handler = DBhandler()
         self.kcelectra = Kcelectra()
 
     def analyze_sentiment(self, message):

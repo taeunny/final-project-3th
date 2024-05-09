@@ -106,17 +106,17 @@ class DBhandler:
             self.db.close()
 
 
-if __name__ == "__main__":
-    from kcelectra_model import Kcelectra
+# if __name__ == "__main__":
+#     from kcelectra_model import Kcelectra
 
-    db_handler = DBhandler()
-    kcelectra = Kcelectra()
+#     db_handler = DBhandler()
+#     kcelectra = Kcelectra()
 
-    dialog_log = db_handler.select_dialog_log()
-    label = kcelectra.analyze_sentiment(pd.DataFrame(dialog_log))
-    db_handler.update_dialog_emotion(label)
+#     dialog_log = db_handler.select_dialog_log()
+#     label = kcelectra.analyze_sentiment(pd.DataFrame(dialog_log))
+#     db_handler.update_dialog_emotion(label)
 
-    if db_handler.select_dialog_log():
-        print("인풋 성공함!")
-    else:
-        print("인풋 실패!")
+#     if db_handler.select_dialog_log():
+#         print("인풋 성공함!")
+#     else:
+#         print("인풋 실패!")
