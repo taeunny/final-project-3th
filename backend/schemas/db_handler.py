@@ -14,17 +14,15 @@ import pandas as pd
 ## .env ##
 load_dotenv(find_dotenv())  # 환경변수 로드
 
-DB_HOST = os.getenv("DB_HOST")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-
-
 class DBhandler:
     def __init__(self):
-        self.db = pymysql.connect(
-            host=DB_HOST, user=DB_USER, password=DB_PASSWORD, charset="utf8"
+        self.connection = pymysql.connect(
+            host=os.getenv("DB_HOST"), 
+            user=os.getenv("DB_USER"), 
+            password=os.getenv("DB_PASSWORD"), 
+            charset="utf8"
         )
-        self.cursor = self.db.cursor()
+        self.cursor = self.connection.cursor()
         self.cursor.execute("USE mentos;")  # mentos 스키마 접근
 
     def create_user(self, user_id):
@@ -36,43 +34,36 @@ class DBhandler:
         except:
             print(traceback.format_exc())
             return False
-        finally:
-            # self.db.commit()
-            self.cursor.close()
-            self.db.close()
+
 
     def create_dialog_message(
         self, u_message, ai_message
     ):  # dialog Table INSERT DATA(user_message(인풋), ai_message(아웃풋))
         try:
             self.cursor.execute(
-                f"INSERT INTO mentos.dialog (dt_dialog, u_message, ai_message) VALUES ({u_message}, {ai_message}, NOW();)"
+                "INSERT INTO mentos.dialog (dt_dialog, u_message, ai_message) VALUES (%s, %s, NOW();)", (u_message, ai_message)
             )
             return True
         except:
             print(traceback.format_exc())
             return False
-        finally:
-            # self.db.commit()
-            self.cursor.close()
-            self.db.close()
 
-    def update_dialog_emotion(
-        self, kcelectra_data
-    ):  # dialog_table UPDATE dialog_emotion (감정분석 후 감정분석 데이터 update)
+
+    def update_dialog_emotion(self, df):
         try:
-            for dialog_id, model_data in enumerate(kcelectra_data, start=1):
-                self.cursor.execure(
-                    f"UPDATE dialog SET dialog_emotion = {model_data} WHERE dialog_id = {dialog_id}"
+            for index, row in df.iterrows():
+                dialog_id = row['dialog_id']
+                emotion = row['label']
+                self.cursor.execute(
+                    "UPDATE dialog SET dialog_emotion = %s WHERE dialog_id = %s",
+                    (emotion, dialog_id)
                 )
-            self.db.commit()
+            self.connection.commit()
             return True
-        except:
-            print(traceback.format_exc())
+        except Exception as e:
+            print(f"Error updating dialog emotion: {e}")
+            self.connection.rollback()
             return False
-        finally:
-            self.cursor.close()
-            self.db.close()
 
     def create_emotion_log(self, input_message):  # emotion_log Table
         try:
@@ -86,24 +77,20 @@ class DBhandler:
         except:
             print(traceback.format_exc())
             return False
-        finally:
-            # self.db.commit()
-            self.cursor.close()
-            self.db.close()
+
 
     def select_dialog_log(self):  # dialog Table u_message 조회
         try:
-            self.cursor.execute("SELECT u_message FROM dialog;")
+            self.cursor.execute("SELECT dialog_id, u_message FROM dialog;")
             result = self.cursor.fetchall()
             return result
 
         except:
             print(traceback.extract_exc())
             return False
-        finally:
-            # self.db.commit()
-            self.cursor.close()
-            self.db.close()
+
+    def close_connection(self):
+        self.connection.close()
 
 
 # if __name__ == "__main__":
