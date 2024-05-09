@@ -1,0 +1,15 @@
+transformers==4.37.2
+datasets
+peft==0.8.2
+trl==0.7.10
+bitsandbytes==0.42.0
+wandb
+pandas
+numpy
+accelerate==0.26.1
+numpy
+pymysql
+python-dotenv
+tensorboard 
+
+
