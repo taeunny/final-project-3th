@@ -1,10 +1,9 @@
 import json
 import requests
 import gradio as gr
+BACKEND_URL = ""
 
-BACKEND_URL = "http://52.78.167.11:8000"
-
-def res(message: str, history: list) -> str:  # @ message > 사용자 현재 질문
+def res(message: str, history: list) -> str:
     payload = {"msg": message}
     response = requests.post(
         BACKEND_URL + "/counselor", data=json.dumps(payload)
@@ -25,4 +24,3 @@ demo = gr.ChatInterface(
 )
 
 demo.queue().launch(debug=True, share=True)
-
