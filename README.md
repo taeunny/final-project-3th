@@ -25,14 +25,15 @@
 
 
 ## 2. 서비스 Flow
+![FLOW CHART](https://i.ibb.co/8D5jVcc/3-FLOW.jpg)
 
-![FLOW CHART](https://cdn.discordapp.com/attachments/1209481885798109255/1238401994264281098/3_FLOW.jpg?ex=663f273b&is=663dd5bb&hm=6174a3caa7438e5c55a2a5f895dfb46118bf26f45726ea66c992b861c74d50a8&)
+## 3. 프로젝트 일정
+<img src="https://i.ibb.co/hBPQzcP/image.png" />
 
-## 3. 프로젝트 구성 및 담당자
+## 4. 프로젝트 구성 및 담당자
 
 ### 홍성균
-
-(이미지)
+<img src="https://i.ibb.co/GtBbpry/image.png" height="150" width="120"/>
 
 1. 
 
@@ -50,7 +51,7 @@
 
 ### 이희성
 
-(이미지)
+<img src="https://i.ibb.co/PQMJD49/image.png" height="150" width="120"/>
 
 1. 
 
@@ -62,7 +63,7 @@
 
 
 
-<img src="https://i.ibb.co/TmYnJRY/image.png" height="160" width="140"/>             
+<img src="https://i.ibb.co/T0fyMRN/image.png" height="165" width="120"/>             
 
 
 
@@ -78,7 +79,7 @@
 
 
 
-##  4. 사용 툴
+##  5. 사용 툴
 
 | Category | Techs                                                        |
 | -------- | ------------------------------------------------------------ |
@@ -90,7 +91,7 @@
 
 
 
-## 5. 데이터 셋
+## 6. 데이터 셋
 
 #### uine/single-practice-dataset
 
@@ -101,4 +102,4 @@
 
 
 
-## 6. 
+## 7. 결과
