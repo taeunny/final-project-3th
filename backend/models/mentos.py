@@ -40,5 +40,4 @@ embedding_fn = hf.embed_query
 vectorstore = FAISS(embedding_fn, index, InMemoryDocstore({}), {})
 retriever = vectorstore.as_retriever(search_kwargs=dict(k=2))
 retriever_memory = VectorStoreRetrieverMemory(retriever=retriever, return_docs=False)
-ConversationBufferWindowMemory()
 buffer_memory = ConversationBufferWindowMemory(k=1, return_messages=False)

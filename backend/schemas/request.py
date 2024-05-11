@@ -1,4 +1,5 @@
 from pydantic import BaseModel
 
-class text(BaseModel):
+class Text(BaseModel):
     msg: str
+    tone: str
