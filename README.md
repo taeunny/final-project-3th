@@ -24,8 +24,10 @@
 
 
 
-## 2. 서비스 Flow
-![FLOW CHART](https://i.ibb.co/8D5jVcc/3-FLOW.jpg)
+## 2. 서비스 Flow & ERD
+<img src="https://i.ibb.co/KXLw5Mm/3-FLOW.jpg" alt="3-FLOW" border="0">
+
+<img src="https://i.ibb.co/L1t2gXV/mentalcare-erd-4.png" alt="mentalcare-erd-4" border="0">
 
 ## 3. 프로젝트 일정
 <img src="https://i.ibb.co/hBPQzcP/image.png" />
@@ -33,7 +35,8 @@
 ## 4. 프로젝트 구성 및 담당자
 
 ### 홍성균
-<img src="https://i.ibb.co/GtBbpry/image.png" height="150" width="120"/>
+
+<img src="https://i.ibb.co/ydy5G3H/Kakao-Talk-20240510-182343911.png" alt="Kakao-Talk-20240510-182343911" border="0" height="150" width="120"/>
 
 1. 
 
@@ -51,7 +54,7 @@
 
 ### 이희성
 
-<img src="https://i.ibb.co/PQMJD49/image.png" height="150" width="120"/>
+<img src="https://i.ibb.co/NtvvgzH/image.png" alt="image" border="0" height="150" width="120"/>
 
 1. 
 
@@ -62,8 +65,7 @@
 ### 이현지
 
 
-
-<img src="https://i.ibb.co/T0fyMRN/image.png" height="165" width="120"/>             
+<img src="https://i.ibb.co/RvKVd8v/image.png" alt="image" border="0" height="165" width="120"/>  
 
 
 
