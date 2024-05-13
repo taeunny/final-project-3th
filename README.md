@@ -27,30 +27,7 @@
 ## 2. 서비스 Flow & ERD
 <img src="https://i.ibb.co/sHqDC0t/mentos-flow-1.png" alt="mentos-flow-1" border="0">  
 
-**1. project에 사용할 모델 분석 및 선정** 
-   1) meta-llama/Meta-Llama-3-8B-Instruct
-   2) microsoft/Phi-3-mini-4k-instruct
-   3) yanolja/EEVE-Korean-Instruct-10.8B-v1.0  
-**=>세 모델 중에서 실용적 측면 및 이미 한국어 단어장이 추가 된 EEVE 모델을 프로젝트 모델로 선정** 
 
-**2. HuggingFace의 trl 라이브러리를 활용한 SFT 진행**
-   - Smoked-Salmon-s/empathetic_dialogues_ko 데이터 활용하여 singgleturn으로 SFT 학습 진행  
-   - 진행시 다양한 하이퍼 파라미터를 선정하여 출력을 비교
-
-**3. HuggingFace의 trl 라이브러리를 활용한 DPO 진행**
-   - Naver ClovaX를 활용하여 DPO의 chosen과 rejected 칼럼을 생성(약 1만개)
-   - 해당 chosen, rejected 데이터를 활용하여 DPO 진행
-
-**4. LangChain을 활용하여 RAG 구현**
-   - 허깅페이스의 HuggingFaceEmbeddings, 랭체인의 VectorStore, FAISS 등등 활용하여
-   - RAG를 구현하고 해당 RAG를 프로젝트 모델에 적용시켜 멀티턴을 구현
- 
-**5. 최종 모델 평가 및 실제 인퍼런스용 모델 선정**
-   - G-eval 및 실제 사용 후기를 통한 성능 평가 진행 
-
-**6. inference**
-   - FastAPI 및 Gradio를 활용하여 모듈화 및 실제 시연 준비
-   - 구체적인 UI 및 유저 편의성 고려하여 조정
 <img src="https://i.ibb.co/dpk7Xjz/mentalcare-erd-6.png" alt="mentalcare-erd-6" border="0">
 
 #### user (사용자 정보 테이블)  
