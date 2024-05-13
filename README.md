@@ -97,8 +97,15 @@
 
 <img src="https://i.ibb.co/K9jXHcM/image.png"  height="160" width="130"/>
 
-1. 
+1. **데이터분석 및 시각화**
+   - Pandas 라이브러리를 활용하여 데이터 전처리 및 분석
+   - matplotlib, seaborn, plotly를 활용하여 데이터 시각화 작업 수행
 
+2. **모델에 입력 데이터 문장에 대한 감성분석 수행**
+   - Hugging Face - nlp04/korean_sentiment_analysis_kcelectra를 활용하여 입력 문장에 대한 감정 레이블링
+
+3. **데이터베이스 설계**
+   - 사용자 입력 문장 및 시스템 출력 문장에 대한 대화 데이터 저장 및 관리를 위해 MySQL을 활용하여 테이블 설계
 
 
 
