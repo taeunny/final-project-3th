@@ -53,6 +53,47 @@
    - 구체적인 UI 및 유저 편의성 고려하여 조정
 <img src="https://i.ibb.co/dpk7Xjz/mentalcare-erd-6.png" alt="mentalcare-erd-6" border="0">
 
+#### user (사용자 정보 테이블)  
+
+- user_id : 아이디
+- password : 비밀번호
+- name : 유저 이름
+- dt_birth : 유저 생년월일
+- gender : 유저 성별
+- language : 유저 사용 언어
+
+#### dialog (사용자 사용내역 저장 테이블)
+
+- dialog_id : 대화 아이디
+- counsel_id : counsel 테이블 id
+- dt_dialog : 대화 날짜
+- u_message : 입력값
+- ai_message : 모델 출력값
+- dialog_emotion : 대화 문장 감성분석 모델 출력 값
+- past_dialog : 과거 대화
+- change_dialog : 어투 적용된 대화 내역
+
+#### counsel (사용자 채팅방 단위 정보 테이블)
+
+- counsel_id : 채팅 아이디
+- character_id : character 테이블 id
+- user_id : user 테이블 id
+- dt_start : 채팅 시작 날짜
+- dt_end : 채팅 종료 날짜
+
+#### emotion_log (채팅방 전체 감정 흐름분석 테이블)
+
+- emotion_id : 감정분석 아이디
+- counsel_id : counsel 테이블 id
+- counsel_emotion : 채팅방 감정분석 값
+- dt_emotion_log : 감정 log 값
+
+#### character (어투 캐릭터 정보 테이블)
+
+- character_id : 어투 캐릭터 아이디
+- character_name : 어투 캐릭터 이름
+- character_model : 어투 캐릭터 모델
+
 ## 3. 프로젝트 일정
 <img src="https://i.ibb.co/hBPQzcP/image.png" />
 
