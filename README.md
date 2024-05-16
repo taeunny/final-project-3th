@@ -114,7 +114,22 @@
 
 <img src="https://i.ibb.co/NtvvgzH/image.png" alt="image" border="0" height="150" width="120"/>
 
-1. 
+1. **모델 학습 데이터 선정 및 Alpaca format으로 변환**  
+   - Smoked-Salmon-s/empathetic_dialogues_ko  
+   - uine/single-practice-dataset
+
+2. **모델 선정 및 분석**  
+   - nlpai-lab/KULLM3  
+   - yanolja/EEVE-Korean-Instruct-10.8B-v1.0
+
+3. **모델 학습(SFT, DPO)파이프라인 구축**  
+   - 추론 및 학습 코드 작성
+
+4. **전체 모델 연결 및 추론 파이프라인 구축**  
+   - kcelectra, kobart, LLM
+
+5. **백엔드 구축 및 Gradio 구현**  
+   - FastAPI 코드 작성
 
 
 
