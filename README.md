@@ -99,7 +99,7 @@
 
 1. **데이터분석 및 시각화**
    - Pandas 라이브러리를 활용하여 데이터 전처리 및 분석
-   - matplotlib, seaborn, plotly를 활용하여 데이터 시각화 작업 수행
+   - matplotlib, seaborn, plotly를 활용한 데이터 시각화 작업 수행
 
 2. **모델에 입력 데이터 문장에 대한 감성분석 수행**
    - Hugging Face - nlp04/korean_sentiment_analysis_kcelectra를 활용하여 입력 문장에 대한 감정 레이블링
