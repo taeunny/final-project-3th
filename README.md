@@ -208,7 +208,6 @@
 **1. huggingface를 통해 SFTtrainer로 파인튜닝 실시**
 
 - 실제 input으로 들어가는 데이터가 fine-tuning format에 맞춰 변환된 모습
-<img src="https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/95369b7f-f9a8-4cfa-8ab3-214cdbb506fa.png  width="200" height="400"/>
 
 ![image](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/95369b7f-f9a8-4cfa-8ab3-214cdbb506fa)
 
