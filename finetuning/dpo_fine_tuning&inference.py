@@ -204,12 +204,12 @@ quant_config = BitsAndBytesConfig(
 )
 
 
-MODEL_DIR = "uine/single-dpo-practice-merge-0513-0220"
+MODEL_DIR = "uine/single-dpo-practice-adapter"
 model = AutoPeftModelForCausalLM.from_pretrained(MODEL_DIR,
                                                       quantization_config=quant_config,
                                                       device_map="auto")
 
-tok = AutoTokenizer.from_pretrained("uine/single-practice-fine-tuning-eeve-adapter", trust_remote_code=True)
+tok = AutoTokenizer.from_pretrained("uine/single-dpo-practice-adapter", trust_remote_code=True)
 
 streamer = TextStreamer(tok, skip_prompt=False, skip_special_tokens=False, device_map="auto")
 s = "제가 요즘 너무 불안해요. 앞으로 뭐가 될지 모르겠어요."
