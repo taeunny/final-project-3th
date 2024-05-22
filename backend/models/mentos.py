@@ -20,12 +20,12 @@ quant_config = BitsAndBytesConfig(
     bnb_4bit_use_double_quant=False,
 )
 
-MODEL_DIR = "uine/single-practice-fine-tuning-eeve-adapter"
+MODEL_DIR = "hskhyl/EEVE-finetuned-05-13_1"
 model = AutoPeftModelForCausalLM.from_pretrained(MODEL_DIR,
                                                       quantization_config=quant_config,
                                                       device_map="auto")
 
-tokenizer = AutoTokenizer.from_pretrained("uine/single-practice-fine-tuning-eeve-adapter")
+tokenizer = AutoTokenizer.from_pretrained("hskhyl/EEVE-finetuned-05-13_1")
 
 model_name = "jhgan/ko-sbert-nli"
 encode_kwargs = {'normalize_embeddings': True}

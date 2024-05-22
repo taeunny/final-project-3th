@@ -204,10 +204,61 @@
 
 
 ## 8. 결과  
-<img src="https://i.ibb.co/nk8FH4d/result.png" alt="result" border="0">
-- 질문에 대한 모델1, 2, 3, 4의 답변들  
-  
-  
-<img src="https://i.ibb.co/ZB5HpWG/result.png" alt="result" border="0">
-- 모델1, 2, 3, 4 평가 지표
-- 모델3이 가장 좋은 평가를 보임
+**1. huggingface를 통해 SFTtrainer로 파인튜닝 실시**
+<br/> 
+- 실제 input으로 들어가는 데이터가 fine-tuning format에 맞춰 변환된 모습
+![1](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/cb8ef6e4-88ad-4851-aa25-20b2406e3480)
+
+
+
+- 실제 Fine-tuning 학습곡선
+![2](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/3e4e49a8-6b87-46d2-9fec-ddd66aa4aea9)
+
+
+<br/><br/> 
+**2. 여러 하이퍼 파라미터로 fine-tuning 후에 실제 변화된 출력 예시**
+<br/> 
+- 기존 임의로 설정한 값 보다 하이퍼 파라미터 튜닝을 통해 얻은 출력이 더 양호하다고 판단됨.
+![3](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/8819fab0-8caa-43f3-a7a2-7c8cfe2ad172)
+
+
+<br/><br/>
+**3. 팀원 투표를 거쳐 여러 하이퍼 파라미터 튜닝 모델 후보군 중에서 최종 모델 선정**
+<br/>
+- peft_config의 r, training_argumnets의 epoch, batch_size, optim, weight_decay, lr_scheduler_type 등을 하나씩 수정하여
+- 결과 값에 긍정적인 영향을 주는 파라미터에 관한 분석을 마친 후 여러 조합으로 얻어낸 하이퍼 파라미터 튜닝 모델 5개중
+- 하나의 모델을 프로젝트에서 사용할 모델로 선정
+![4](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/aad3eddf-9ff8-4808-b780-738535af55fa)
+
+
+<br/><br/>
+**4. 최종 선정 모델에 관한 huggingface 라이브러리를 통한 DPO 진행**
+<br/>
+- DPO에 사용되는 데이터셋
+![5](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/dbcb34e9-290c-4444-a9e7-fe8012c43cf5)
+
+
+
+- 실제 학습이 진행되는 모습 (rejected와 chosen에 대한 reward값의 차이)
+![6](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/2d527f81-9635-4848-a476-8c07b999b72e)
+
+
+<br/><br/>
+**5. DPO 결과에 대한 분석 및 실제 적용되는 말투에 추가(전문가 말투)**
+<br/>
+- '자존감'에 관한 질문에 단순히 단어를 반복하는 것이 아닌 관계된 매우 유의미한 단어인 '자기효능감'까지 출력
+![7](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/27bd978e-edf3-4f0f-9ed6-4439279c106b)
+
+
+<br/><br/>
+**6. 실제 gradio를 통해 시연되는 모습**
+<br/>
+![8](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/b8cc807f-0b53-4f03-b3e8-541e2c8b27fb)
+
+
+<br/><br/>
+**7. 프로젝트를 마치며(feedback)**
+<br/>
+![9](https://github.com/sesac-dobong1th-saltlux-llm/final-project-3th/assets/155405525/2840aa8a-005d-4197-b081-247802e722f4)
+
+
